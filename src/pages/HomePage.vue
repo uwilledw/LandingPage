@@ -1,27 +1,51 @@
 <template>
-  <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-    <div class="home-card p-5 bg-white rounded elevation-3">
-      <img
-        src="https://bcw.blob.core.windows.net/public/img/8600856373152463"
-        alt="CodeWorks Logo"
-        class="rounded-circle"
-      >
-      <h1 class="my-5 bg-dark text-white p-3 rounded text-center">
-        Vue 3 Starter
-      </h1>
-    </div>
+  <div class="container-fluid">
+    <section class="row justify-content-center">
+      <div class="col-md-10">
+        <span v-for="w in word" :id="w" class="color">{{ w }}</span>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
+import { onMounted } from 'vue';
+import { logger } from '../utils/Logger.js';
+import { AppState } from '../AppState.js';
+
 export default {
   setup() {
-    return {}
+    let red = "#93e5c8"
+    let word = AppState.word
+    function flow() {
+      word.forEach((letter, i) => {
+        setTimeout(() => {
+          let lett = document.getElementById(letter)
+          lett.style.color = red;
+          lett.style.fontSize = 30 + "px"
+          logger.log(letter);
+        }, i * 200);
+      });
+    }
+    onMounted(() => flow())
+
+    return {
+      word,
+      red,
+    }
   }
 }
 </script>
 
 <style scoped lang="scss">
+.red {
+  color: red;
+}
+
+.color {
+  transition: all .2s ease;
+}
+
 .home {
   display: grid;
   height: 80vh;
