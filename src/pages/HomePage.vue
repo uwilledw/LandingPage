@@ -1,8 +1,13 @@
 <template>
   <div class="container-fluid">
-    <section class="row justify-content-center">
+    <section class="row justify-content-center my-2">
       <div class="col-md-10">
         <span v-for="w in word" :id="w" class="color">{{ w }}</span>
+      </div>
+    </section>
+    <section class="row">
+      <div class="col-md-10">
+        <p>Portfolio</p>
       </div>
     </section>
   </div>
@@ -15,7 +20,7 @@ import { AppState } from '../AppState.js';
 
 export default {
   setup() {
-    let red = "#93e5c8"
+    let red = "#7165b5"
     let word = AppState.word
     function flow() {
       word.forEach((letter, i) => {
@@ -24,7 +29,7 @@ export default {
           lett.style.color = red;
           lett.style.fontSize = 30 + "px"
           logger.log(letter);
-        }, i * 200);
+        }, i * 180);
       });
     }
     onMounted(() => flow())
