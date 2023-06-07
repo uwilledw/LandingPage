@@ -6,5 +6,5 @@ export const AppState = reactive({
   /** @type {import('./models/Account.js').Account} */
   account: {},
 
-  word: ["A", "b", "o", "u", "t", " ", "M", "e"]
+  word: ["A", "B", "O", "U", "T", " ", "M", "E"]
 })

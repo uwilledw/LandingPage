@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark px-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
 
@@ -10,18 +10,18 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav ms-auto">
         <li>
-          Home
+          <button class="btn btn-light mx-2">Home</button>
         </li>
         <li>
-          About
+          <button class="btn btn-light mx-2">About</button>
         </li>
         <li>
-          Portfolio
+          <button class="btn btn-light mx-2">Portfolio</button>
         </li>
         <li>
-          Contact
+          <button class="btn btn-light mx-2">Contact</button>
         </li>
       </ul>
       <!-- LOGIN COMPONENT HERE -->
