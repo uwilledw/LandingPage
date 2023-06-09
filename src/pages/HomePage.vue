@@ -33,54 +33,54 @@
         </p>
       </div>
     </section>
-    <section class="row justify-content-center align-items-center my-2">
+    <section id="skills" class="row justify-content-center align-items-center my-2">
       <div class="col-md-10 text-center my-3 title">
         <span v-for="l in skills" :id="l?.id" class="color">{{ l?.letter }}</span>
       </div>
     </section>
     <section class="row justify-content-center p-2">
-      <div class="col-6 col-md-2 py-2">
+      <div class="col-6 col-md-2 py-2" title="Hyper Text Markup Language">
         <img class="img-fluid" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg"
           alt="">
       </div>
-      <div class="col-6 col-md-2 py-2">
+      <div class="col-6 col-md-2 py-2" title="Cascading Style Sheets">
         <img class="img-fluid" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg"
           alt="">
       </div>
-      <div class="col-6 col-md-2 py-2">
+      <div class="col-6 col-md-2 py-2" title="Bootstrap">
         <img class="img-fluid"
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original-wordmark.svg" alt="">
       </div>
-      <div class="col-6 col-md-2 py-2">
+      <div class="col-6 col-md-2 py-2" title="Figma">
         <img class="img-fluid" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="">
       </div>
-      <div class="col-6 col-md-2 py-2">
+      <div class="col-6 col-md-2 py-2" title="Vue">
         <img class="img-fluid" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-plain-wordmark.svg"
           alt="">
       </div>
-      <div class="col-6 col-md-2 py-2">
+      <div class="col-6 col-md-2 py-2" title="JavaScript">
         <img class="img-fluid" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
           alt="">
       </div>
-      <div class="col-6 col-md-2 py-2">
+      <div class="col-6 col-md-2 py-2" title="Node.js">
         <img class="img-fluid" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" alt="">
       </div>
-      <div class="col-6 col-md-2 py-2">
+      <div class="col-6 col-md-2 py-2" title="Mongo DataBase">
         <img class="img-fluid" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg"
           alt="">
       </div>
-      <div class="col-6 col-md-2 py-2">
+      <div class="col-6 col-md-2 py-2" title="C Sharp">
         <img class="img-fluid" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg" alt="">
       </div>
-      <div class="col-6 col-md-2 py-2">
+      <div class="col-6 col-md-2 py-2" title="DotNet">
         <img class="img-fluid"
           src="https://www.onesixsolutions.com/wp-content/uploads/2019/12/dotnet_round-e1576518490913.png" alt="">
       </div>
-      <div class="col-6 col-md-2 py-2">
+      <div class="col-6 col-md-2 py-2" title="MySQL">
         <img class="img-fluid" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain-wordmark.svg"
           alt="">
       </div>
-      <div class="col-6 col-md-2 py-2">
+      <div class="col-6 col-md-2 py-2" title="VS Code">
         <img class="img-fluid"
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg" alt="">
       </div>

@@ -18,6 +18,9 @@
           <button class="btn btn-light mx-2">About</button>
         </li>
         <li>
+          <a href="#skills" class="btn btn-light mx-2">Skills</a>
+        </li>
+        <li>
           <button class="btn btn-light mx-2">Portfolio</button>
         </li>
         <li>
