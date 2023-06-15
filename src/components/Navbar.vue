@@ -12,19 +12,19 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav ms-auto">
         <li>
-          <button class="btn btn-light mx-2">Home</button>
+          <button @click="goHome()" class="btn btn-light mx-2">Home</button>
         </li>
         <li>
-          <button class="btn btn-light mx-2">About</button>
+          <button @click="goAbout()" class="btn btn-light mx-2">About</button>
         </li>
         <li>
-          <a href="#skills" class="btn btn-light mx-2">Skills</a>
+          <button @click="goSkills()" class="btn btn-light mx-2">Skills</button>
         </li>
         <li>
-          <button class="btn btn-light mx-2">Portfolio</button>
+          <button @click="goPort()" class="btn btn-light mx-2">Portfolio</button>
         </li>
         <li>
-          <button class="btn btn-light mx-2">Contact</button>
+          <button @click="goContact()" class="btn btn-light mx-2">Contact</button>
         </li>
       </ul>
       <!-- LOGIN COMPONENT HERE -->
@@ -33,10 +33,21 @@
 </template>
 
 <script>
+import { logger } from '../utils/Logger.js'
 import Login from './Login.vue'
 export default {
   setup() {
-    return {}
+    return {
+
+      goSkills() {
+        let skillElem = document.getElementById("skills")
+        skillElem.scrollIntoView()
+      },
+
+      goHome() {
+        window.scrollTo(0, 0)
+      }
+    }
   },
   components: { Login }
 }
