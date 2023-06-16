@@ -87,7 +87,7 @@
     </section>
     <section class="row">
       <div class="col-md-10">
-        <p>Portfolio</p>
+        <p>Portfolio here</p>
       </div>
     </section>
   </div>
