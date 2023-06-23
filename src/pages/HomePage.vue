@@ -85,9 +85,23 @@
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg" alt="">
       </div>
     </section>
-    <section class="row">
-      <div class="col-md-10">
-        <p>Portfolio here</p>
+    <section class="row justify-content-center">
+      <div class="col-md-10 text-center">
+        <span v-for="l in port" :id="l?.id" class="color">{{ l?.letter }}</span>
+      </div>
+      <div class="col-md-3">
+        <img src="" alt="">
+      </div>
+    </section>
+    <section class="row justify-content-center">
+      <div class="col-md-10 text-center">
+        <span v-for="l in contact" :id="l?.id" class="color">{{ l?.letter }}</span>
+      </div>
+      <div class="col-10 text-center m-5">
+        <a title="William's Github" href="https://github.com/uwilledw" class="btn btn-light mx-4"><i
+            class="mdi mdi-github fs-3"></i></a>
+        <a title="William's LinkedIn" href="https://www.linkedin.com/in/uwilliamedwards/" class="btn btn-light mx-4"><i
+            class="mdi mdi-linkedin fs-3"></i></a>
       </div>
     </section>
   </div>
@@ -142,7 +156,9 @@ export default {
     return {
       abtMe,
       color,
-      skills: computed(() => AppState.skills)
+      skills: computed(() => AppState.skills),
+      port: computed(() => AppState.port),
+      contact: computed(() => AppState.contact)
     }
   }
 }
