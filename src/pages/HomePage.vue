@@ -1,11 +1,12 @@
 <template>
   <div class="container-fluid">
-    <section class="row hero-img justify-content-center align-items-center">
+    <section id="hero" class="row hero-img justify-content-center align-items-center">
+      <Navbar class="fixed-top" />
       <div class="col-md-6 text-light text-center">
         <h1>Hello, I am William Edwards, a fullstack software developer</h1>
       </div>
     </section>
-    <section class="row justify-content-center align-items-center my-2">
+    <section id="abtMe" class="row justify-content-center align-items-center my-2">
       <div class="col-md-10 text-center my-3 title">
         <span v-for="l in abtMe" :id="l?.id" class="color">{{ l?.letter }}</span>
       </div>
@@ -85,30 +86,51 @@
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original-wordmark.svg" alt="">
       </div>
     </section>
-    <section class="row justify-content-center">
+    <section id="port" class="row justify-content-center">
       <div class="col-md-10 text-center">
         <span v-for="l in port" :id="l?.id" class="color">{{ l?.letter }}</span>
       </div>
-      <div class="col-md-3">
-        <img src="" alt="">
+      <div class="col-lg-6 my-2">
+        <div @click="flip(100)" class="keepr selectable">
+          <div id="100" class="clear">
+            <h1 class="text-light">Hello</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 my-2">
+        <div @click="flip(101)" class="gameStone selectable">
+          <div id="101" class="clear">
+            <h1 class="text-light">hi</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 my-2">
+        <div @click="flip(102)" class="tower selectable">
+          <div id="102" class="clear">
+            <h1 class="text-light">hey</h1>
+
+          </div>
+        </div>
       </div>
     </section>
-    <section class="row justify-content-center">
+    <section id="contact" class="row justify-content-center">
       <div class="col-md-10 text-center">
         <span v-for="l in contact" :id="l?.id" class="color">{{ l?.letter }}</span>
       </div>
       <div class="col-10 text-center m-5">
-        <a title="William's Github" href="https://github.com/uwilledw" class="btn btn-light mx-4"><i
+        <a title="William's Github" href="https://github.com/uwilledw" class="btn btn-light mx-3"><i
             class="mdi mdi-github fs-3"></i></a>
-        <a title="William's LinkedIn" href="https://www.linkedin.com/in/uwilliamedwards/" class="btn btn-light mx-4"><i
+        <a title="William's LinkedIn" href="https://www.linkedin.com/in/uwilliamedwards/" class="btn btn-light mx-3"><i
             class="mdi mdi-linkedin fs-3"></i></a>
+        <a title="William's Gmail" href="williamedwards7717@gmail.com" class="btn btn-light mx-3"><i
+            class="mdi mdi-email fs-3"></i></a>
       </div>
     </section>
   </div>
 </template>
 
 <script>
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, watchEffect } from 'vue';
 import { logger } from '../utils/Logger.js';
 import { AppState } from '../AppState.js';
 
@@ -150,15 +172,53 @@ export default {
       });
     }
     // onMounted(() => setInterval(flow, 5000))
+    onMounted(() => {
+      setInterval(flow, 5000),
+        changeBg()
+    })
 
     // const t = setInterval(flow, 5000)
+
+    function changeBg() {
+      let navElem = document.getElementById("nav")
+      logger.log("test")
+      if (navElem) {
+        navElem.onscroll = (event) => {
+          if (document.documentElement.scrollTop > 10) {
+            navElem.classList.add("bg-dark")
+          }
+        }
+      }
+    }
+
+    watchEffect(() => window)
 
     return {
       abtMe,
       color,
       skills: computed(() => AppState.skills),
       port: computed(() => AppState.port),
-      contact: computed(() => AppState.contact)
+      contact: computed(() => AppState.contact),
+
+      flip(id) {
+        logger.log(id)
+        let elem = document.getElementById(`${id}`)
+        this.changeBg()
+        if (elem.classList.contains("app-card")) {
+          elem.classList.remove("app-card")
+          elem.classList.add("clear")
+        } else {
+          elem.classList.add("app-card")
+          elem.classList.remove("clear")
+        }
+      },
+      changeBg() {
+        logger.log(document.documentElement.scrollTop, "top")
+        if (document.documentElement.scrollTop > 10) {
+          let navElem = document.getElementById("nav")
+          navElem.classList.add("bg-dark")
+        }
+      }
     }
   }
 }
@@ -179,7 +239,7 @@ export default {
 
 .hero-img {
   background-image: url(https://images.unsplash.com/photo-1498898733745-c8c6df58e4ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80);
-  height: 50vh;
+  height: 60vh;
   background-position: center;
   background-size: cover;
 }
@@ -189,5 +249,52 @@ export default {
   height: 55vh;
   object-fit: cover;
   object-position: center;
+}
+
+// .app-img {
+//   width: 100%;
+//   height: 35vh;
+//   object-position: center;
+// }
+
+.keepr {
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://images.unsplash.com/photo-1687154156757-25b60bb3892d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+}
+
+.gameStone {
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://images.unsplash.com/photo-1687154156757-25b60bb3892d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+}
+
+.tower {
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://images.unsplash.com/photo-1687154156757-25b60bb3892d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+}
+
+.app-card {
+  height: 100%;
+  /* From https://css.glass */
+  background: rgba(112, 102, 102, 0.51);
+  // border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border: 1px solid rgba(112, 102, 102, 0.2);
+  transition: ease .2s;
+}
+
+.clear {
+  visibility: hidden;
+  transition: ease .2s;
 }
 </style>

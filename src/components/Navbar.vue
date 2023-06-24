@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark px-3">
+  <nav id="nav" class="navbar navbar-expand-md navbar-dark bg-trans px-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
 
@@ -41,7 +41,18 @@ export default {
 
       goSkills() {
         let skillElem = document.getElementById("skills")
-        skillElem.scrollIntoView()
+        skillElem.scrollIntoView({ block: "center" })
+      },
+      goAbout() {
+        let aboutElem = document.getElementById("abtMe")
+        aboutElem.scrollIntoView({ block: "center" })
+      },
+      goPort() {
+        let portElem = document.getElementById("port")
+        portElem.scrollIntoView({ block: "center" })
+      },
+      goContact() {
+        window.scrollTo(0, 10000)
       },
 
       goHome() {
@@ -56,6 +67,10 @@ export default {
 <style scoped>
 a:hover {
   text-decoration: none;
+}
+
+.bg-trans {
+  background-color: rgba(69, 66, 132, 0);
 }
 
 .nav-link {
