@@ -171,27 +171,23 @@ export default {
         }, i * 200);
       });
     }
-    // onMounted(() => setInterval(flow, 5000))
     onMounted(() => {
       setInterval(flow, 5000),
-        changeBg()
+        setInterval(changeBg, 500)
     })
 
-    // const t = setInterval(flow, 5000)
 
     function changeBg() {
+      // logger.log(document.documentElement.scrollTop, "top")
       let navElem = document.getElementById("nav")
-      logger.log("test")
-      if (navElem) {
-        navElem.onscroll = (event) => {
-          if (document.documentElement.scrollTop > 10) {
-            navElem.classList.add("bg-dark")
-          }
-        }
+      if (document.documentElement.scrollTop > 10) {
+        navElem.classList.add("nav-bg")
+      } else {
+        navElem.classList.remove("nav-bg")
+        navElem.classList.add("ease")
       }
     }
 
-    watchEffect(() => window)
 
     return {
       abtMe,
@@ -210,13 +206,6 @@ export default {
         } else {
           elem.classList.add("app-card")
           elem.classList.remove("clear")
-        }
-      },
-      changeBg() {
-        logger.log(document.documentElement.scrollTop, "top")
-        if (document.documentElement.scrollTop > 10) {
-          let navElem = document.getElementById("nav")
-          navElem.classList.add("bg-dark")
         }
       }
     }
@@ -249,6 +238,16 @@ export default {
   height: 55vh;
   object-fit: cover;
   object-position: center;
+}
+
+.ease {
+  transition: ease .4s;
+
+}
+
+.nav-bg {
+  background-color: rgb(0, 0, 0);
+  transition: ease .4s;
 }
 
 // .app-img {
