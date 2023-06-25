@@ -118,12 +118,12 @@
         <span v-for="l in contact" :id="l?.id" class="color">{{ l?.letter }}</span>
       </div>
       <div class="col-10 text-center m-5">
-        <a title="William's Github" href="https://github.com/uwilledw" class="btn btn-light mx-3"><i
+        <!-- <a title="William's Github" href="https://github.com/uwilledw" class="btn btn-light mx-3"><i
             class="mdi mdi-github fs-3"></i></a>
         <a title="William's LinkedIn" href="https://www.linkedin.com/in/uwilliamedwards/" class="btn btn-light mx-3"><i
             class="mdi mdi-linkedin fs-3"></i></a>
         <a title="William's Gmail" href="williamedwards7717@gmail.com" class="btn btn-light mx-3"><i
-            class="mdi mdi-email fs-3"></i></a>
+            class="mdi mdi-email fs-3"></i></a> -->
       </div>
     </section>
   </div>
